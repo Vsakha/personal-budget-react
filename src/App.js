@@ -6,8 +6,8 @@ import HomePage from './HomePage/HomePage';
 import Footer from './Footer/Footer';
 
 import { BrowserRouter as Router,
-  Switch,
   Route,
+  Routes
   } from 'react-router-dom';
 import AboutPage from './AboutPage/AboutPage';
 import LoginPage from './LoginPage/LoginPage';
@@ -18,25 +18,15 @@ function App() {
       <Menu/>
       <Hero/>
       <div className='mainContainer'>
-        <Switch>
-          <Route path="/about">
-            <AboutPage/>
-          </Route>
-          <Route path="/login">
-            <LoginPage/>
-          </Route>
-          <Route path="/">
-            <HomePage/>
-          </Route>
-        </Switch>
+      <Routes>
+          <Route path="/About" element={<AboutPage/>}/>
+          <Route path="/Login" element={<LoginPage/>}/>
+          <Route path="/" element={<HomePage/>} />
+        </Routes>
       </div>
       <Footer/>
     </Router>
   );
 }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 004779efc7208f2c4230ca173b887821d856de6d
 export default App;
